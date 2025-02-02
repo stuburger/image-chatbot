@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Chat } from "@/components/chat";
 import { DEFAULT_MODEL_NAME, models } from "@/lib/ai/models";
-import { getChatById, getMessagesByChatId } from "@/lib/db/mongo-queries";
+import { getChatById, getMessagesByChatId } from "@/lib/db/queries";
 import { convertToUIMessages } from "@/lib/utils";
 import { DataStreamHandler } from "@/components/data-stream-handler";
 import { auth } from "@/app/(auth)/actions";
@@ -11,7 +11,7 @@ import { auth } from "@/app/(auth)/actions";
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const { id } = params;
-  const chat = await getChatById({ id });
+  const chat = await getChatById({ id }, false);
 
   if (!chat) {
     notFound();

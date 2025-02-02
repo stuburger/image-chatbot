@@ -10,7 +10,7 @@ import {
 import { z } from "zod";
 import { customModel, imageGenerationModel } from "..";
 import { codePrompt } from "../prompts";
-import { saveDocument } from "@/lib/db/mongo-queries";
+import { saveDocument } from "@/lib/db/queries";
 import { Model } from "../models";
 
 interface CreateDocumentProps {

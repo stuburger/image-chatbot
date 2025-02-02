@@ -1,5 +1,5 @@
 import { auth } from "@/app/(auth)/actions";
-import { getSuggestionsByDocumentId } from "@/lib/db/mongo-queries";
+import { getSuggestionsByDocumentId } from "@/lib/db/queries";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

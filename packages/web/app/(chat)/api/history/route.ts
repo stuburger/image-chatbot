@@ -1,5 +1,5 @@
 import { auth } from "@/app/(auth)/actions";
-import { getChatsByUserId } from "@/lib/db/mongo-queries";
+import { getChatsByUserId } from "@/lib/db/queries";
 
 export async function GET() {
   const subject = await auth();

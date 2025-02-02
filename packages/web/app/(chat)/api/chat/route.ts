@@ -14,7 +14,7 @@ import {
   getChatById,
   saveChat,
   saveMessages,
-} from "@/lib/db/mongo-queries";
+} from "@/lib/db/queries";
 import {
   generateUUID,
   getMostRecentUserMessage,
@@ -152,9 +152,9 @@ export async function DELETE(request: Request) {
   }
 
   try {
-    const chat = await getChatById({ id });
+    const chat = await getChatById({ id }, false);
 
-    if (chat.userId !== subject.properties.id) {
+    if (chat?.userId !== subject.properties.id) {
       return new Response("Unauthorized", { status: 401 });
     }
 

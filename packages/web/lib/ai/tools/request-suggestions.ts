@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { Model } from "../models";
 import { DataStreamWriter, streamObject, tool } from "ai";
-import { getDocumentById, saveSuggestions } from "@/lib/db/mongo-queries";
-import { Suggestion } from "@/lib/db/schema-types";
+import { getDocumentById, saveSuggestions } from "@/lib/db/queries";
+import { Suggestion } from "@/lib/db/schema";
 import { customModel } from "..";
 import { generateUUID } from "@/lib/utils";
 

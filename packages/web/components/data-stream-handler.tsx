@@ -3,7 +3,7 @@
 import { useChat } from "ai/react";
 import { useEffect, useRef } from "react";
 import { blockDefinitions, BlockKind } from "./block";
-import { Suggestion } from "@/lib/db/schema-types";
+import { Suggestion } from "@/lib/db/schema";
 import { initialBlockData, useBlock } from "@/hooks/use-block";
 
 export type DataStreamDelta = {

@@ -8,7 +8,7 @@ import {
   deleteMessagesByChatIdAfterTimestamp,
   getMessageById,
   updateChatVisiblityById,
-} from "@/lib/db/mongo-queries";
+} from "@/lib/db/queries";
 import { VisibilityType } from "@/components/visibility-selector";
 
 export async function saveModelId(model: string) {

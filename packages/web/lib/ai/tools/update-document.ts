@@ -9,7 +9,7 @@ import {
 import { Model } from "../models";
 import { Session } from "next-auth";
 import { z } from "zod";
-import { getDocumentById, saveDocument } from "@/lib/db/mongo-queries";
+import { getDocumentById, saveDocument } from "@/lib/db/queries";
 import { customModel, imageGenerationModel } from "..";
 import { updateDocumentPrompt } from "../prompts";
 
