@@ -13,10 +13,10 @@
     "packages/web"
   ],
   "dependencies": {
-    "@openauthjs/openauth": "^0.3.6",
+    "@openauthjs/openauth": "^0.3.9",
     "@tsconfig/node22": "^22.0.0",
     "hono": "^4.6.20",
-    "sst": "3.7.1",
+    "sst": "3.9.10",
     "valibot": "1.0.0-beta.14"
   },
   "devDependencies": {

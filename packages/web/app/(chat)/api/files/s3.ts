@@ -57,7 +57,9 @@ type UploadParams = {
   bucket: string;
   key: string;
   file: Buffer;
+  contentType: string;
 };
+
 interface PutBlobResult {
   url: string;
   downloadUrl: string;
@@ -68,10 +70,11 @@ interface PutBlobResult {
 export const uploadFileToS3 = async (
   params: UploadParams
 ): Promise<PutBlobResult> => {
-  const { bucket, key, file } = params;
+  const { bucket, key, file, contentType } = params;
   const command = new PutObjectCommand({
     Bucket: bucket,
     Key: key,
+    ContentType: contentType,
     Body: file,
   });
 
@@ -87,6 +90,7 @@ export const uploadFileToS3 = async (
       downloadUrl,
       pathname,
       contentDisposition,
+      contentType,
     };
   } catch (caught) {
     if (

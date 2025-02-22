@@ -19,6 +19,7 @@ const FileSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  console.log("Uploading file to S3");
   const subject = await auth();
 
   if (!subject) {
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
         bucket: Resource.Images.name,
         key: filename,
         file: Buffer.from(fileBuffer),
+        contentType: file.type,
       };
       console.log(
         `Uploading to S3 bucket: ${params.bucket}, key: ${params.key}`
